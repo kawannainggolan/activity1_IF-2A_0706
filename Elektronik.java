@@ -29,3 +29,9 @@ public class Elektronik extends Produk {
     public double hitungPajak(double harga) {
         return harga * 0.15;
     }
+    public double hitungDiskon(int jumlahBeli) {
+        if (jumlahBeli >= 5) {
+            return hitungTotalHarga(jumlahBeli) * 0.10;
+        }
+        return 0;
+    }
