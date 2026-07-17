@@ -38,3 +38,12 @@ public class Makanan extends Produk {
     public double hitungDiskon(int jumlahBeli, double persenDiskon) {
         return hitungTotalHarga(jumlahBeli) * (persenDiskon / 100);
     }
+        public double hitungHargaSetelahDiskon(int jumlahBeli) {
+        return hitungTotalHarga(jumlahBeli) - hitungDiskon(jumlahBeli);
+    }
+    
+    @Override
+    public String toString() {
+        return "Makanan: " + nama + " | Harga: Rp " + harga + " | Stok: " + stok + 
+               " | Kategori: " + kategori + " | Kedaluwarsa: " + kedaluwarsa;
+    }
