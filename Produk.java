@@ -24,4 +24,7 @@ public abstract class Produk {
     public void setStok(int stok) {
         this.stok = stok;
     }
-}
+
+    public abstract void tampilInfo();
+    
+    public abstract double hitungPajak(double harga);
