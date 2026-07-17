@@ -47,3 +47,4 @@ public class Makanan extends Produk {
         return "Makanan: " + nama + " | Harga: Rp " + harga + " | Stok: " + stok + 
                " | Kategori: " + kategori + " | Kedaluwarsa: " + kedaluwarsa;
     }
+}
