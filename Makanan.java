@@ -35,3 +35,6 @@ public class Makanan extends Produk {
         }
         return 0;
     }
+    public double hitungDiskon(int jumlahBeli, double persenDiskon) {
+        return hitungTotalHarga(jumlahBeli) * (persenDiskon / 100);
+    }
