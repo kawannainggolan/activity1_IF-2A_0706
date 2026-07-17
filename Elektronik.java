@@ -35,3 +35,6 @@ public class Elektronik extends Produk {
         }
         return 0;
     }
+        public double hitungHargaSetelahDiskon(int jumlahBeli) {
+        return hitungTotalHarga(jumlahBeli) - hitungDiskon(jumlahBeli);
+    }
