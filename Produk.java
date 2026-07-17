@@ -56,3 +56,7 @@ public abstract class Produk {
         }
         return harga * jumlahBeli;
     }
+        @Override
+    public String toString() {
+        return "Produk: " + nama + " | Harga: Rp " + harga + " | Stok: " + stok;
+    }
