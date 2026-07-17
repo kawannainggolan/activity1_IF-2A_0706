@@ -33,3 +33,37 @@ public class Main {
         }
     }
 }
+    public static void tambahProduk(Produk p) {
+        daftarProduk.add(p);
+        System.out.println("Produk berhasil ditambahkan: " + p.getNama());
+    }
+    
+    public static void cariProduk(String nama) {
+        boolean ditemukan = false;
+        for (Produk p : daftarProduk) {
+            if (p.getNama().equalsIgnoreCase(nama)) {
+                p.tampilInfo();
+                ditemukan = true;
+                break;
+            }
+        }
+        if (!ditemukan) {
+            System.out.println("Produk tidak ditemukan.");
+        }
+    }
+    
+    public static void hapusProduk(String nama) {
+        Produk produkDihapus = null;
+        for (Produk p : daftarProduk) {
+            if (p.getNama().equalsIgnoreCase(nama)) {
+                produkDihapus = p;
+                break;
+            }
+        }
+        if (produkDihapus != null) {
+            daftarProduk.remove(produkDihapus);
+            System.out.println("Produk berhasil dihapus: " + nama);
+        } else {
+            System.out.println("Produk tidak ditemukan.");
+        }
+    }
