@@ -15,4 +15,17 @@ public class Elektronik extends Produk {
     public String getMerk() {
         return merk;
     }
+
 }
+    @Override
+    public void tampilInfo() {
+        System.out.println("Elektronik");
+        System.out.println("Merk : " + merk);
+        System.out.println("Garansi : " + garansi + " bulan");
+        System.out.println("----------");
+    }
+    
+    @Override
+    public double hitungPajak(double harga) {
+        return harga * 0.15;
+    }
