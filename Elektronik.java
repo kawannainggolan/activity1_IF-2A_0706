@@ -38,3 +38,8 @@ public class Elektronik extends Produk {
         public double hitungHargaSetelahDiskon(int jumlahBeli) {
         return hitungTotalHarga(jumlahBeli) - hitungDiskon(jumlahBeli);
     }
+        @Override
+    public String toString() {
+        return "Elektronik: " + nama + " | Harga: Rp " + harga + " | Stok: " + stok + 
+               " | Merk: " + merk + " | Garansi: " + garansi + " bulan";
+    }
