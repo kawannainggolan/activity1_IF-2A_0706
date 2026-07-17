@@ -67,3 +67,44 @@ public class Main {
             System.out.println("Produk tidak ditemukan.");
         }
     }
+        public static void updateStok(String nama, int stokBaru) {
+        for (Produk p : daftarProduk) {
+            if (p.getNama().equalsIgnoreCase(nama)) {
+                p.setStok(stokBaru);
+                System.out.println("Stok produk " + nama + " diupdate menjadi " + stokBaru);
+                return;
+            }
+        }
+        System.out.println("Produk tidak ditemukan.");
+    }
+    
+    public static double hitungTotalNilaiStok() {
+        double total = 0;
+        for (Produk p : daftarProduk) {
+            total += p.getHarga() * p.getStok();
+        }
+        return total;
+    }
+    
+    public static void beliProduk(String nama, int jumlah) {
+        for (Produk p : daftarProduk) {
+            if (p.getNama().equalsIgnoreCase(nama)) {
+                if (p.getStok() >= jumlah) {
+                    p.setStok(p.getStok() - jumlah);
+                    double total = p.hitungTotalHarga(jumlah);
+                    double pajak = p.hitungPajak(total);
+                    
+                    System.out.println("=== Detail Pembelian ===");
+                    System.out.println("Produk: " + nama);
+                    System.out.println("Jumlah: " + jumlah);
+                    System.out.println("Total Harga: Rp " + total);
+                    System.out.println("Pajak: Rp " + pajak);
+                    System.out.println("Total Bayar: Rp " + (total + pajak));
+                } else {
+                    System.out.println("Stok tidak mencukupi. Stok tersedia: " + p.getStok());
+                }
+                return;
+            }
+        }
+        System.out.println("Produk tidak ditemukan.");
+    }
